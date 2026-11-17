@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Диме 30!</title>
+<meta property="og:title" content="Диме 30!"><meta property="og:image" content="poster.jpg">
+<style>
+@font-face{font-family:Cav;src:url(caveat-cyrillic-700-normal.woff2);unicode-range:U+0400-04FF;font-display:swap}
+@font-face{font-family:Cav;src:url(caveat-latin-700-normal.woff2);font-display:swap}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#F3EEE4 url(kraft.jpg) center/cover fixed;font-family:Cav,cursive;color:#2E4A86;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100svh;padding:20px 16px;overflow-x:hidden;text-align:center}
+h1{font-size:clamp(44px,12vw,72px);line-height:1;margin-bottom:14px;position:relative;z-index:2}
+.wrap{position:relative;width:min(88vw,420px)}
+.pol{background:#fff;padding:0;border-radius:2px;overflow:hidden;box-shadow:0 8px 22px rgba(60,45,30,.25);transform:rotate(-1.5deg);position:relative;z-index:1;line-height:0}
+video{width:100%;height:auto;display:block}
+.tape{position:absolute;top:-10px;left:-22px;width:100px;height:28px;background:rgba(188,212,238,.85);transform:rotate(-32deg);z-index:3}
+.st{position:absolute;z-index:2;filter:drop-shadow(1px 2px 2px rgba(60,35,10,.3))}
+p.bottom{font-size:clamp(36px,10vw,58px);line-height:1;margin-top:18px}
+.tap{margin-top:10px;font-size:22px;color:#7FA8DA;opacity:.9}
+button.play{position:absolute;inset:0;z-index:4;border:0;background:rgba(255,255,255,.25);font-family:Cav;font-size:30px;color:#2E4A86;display:none;cursor:pointer}
+</style></head><body>
+<h1>Диме 30!</h1>
+<div class="wrap">
+  <img class="st" src="balloons.png" alt="" style="width:26%;left:-14%;top:8%;transform:rotate(-10deg)">
+  <img class="st" src="star.png" alt="" style="width:16%;right:-9%;top:-5%;transform:rotate(14deg)">
+  <img class="st" src="gift.png" alt="" style="width:20%;right:-10%;bottom:12%;transform:rotate(8deg)">
+  <img class="st" src="confetti.png" alt="" style="width:18%;left:-8%;bottom:-4%;transform:rotate(-14deg)">
+  <div class="tape"></div>
+  <div class="pol">
+    <video id="v" src="dima30.mp4" poster="poster.jpg" autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
+    <button class="play" id="b">▶ нажми, чтобы ожил</button>
+  </div>
+</div>
+<p class="bottom">С днём рождения!</p>
+<script>
+var v=document.getElementById('v'),b=document.getElementById('b');
+var p=v.play(); if(p&&p.catch){p.catch(function(){b.style.display='block';});}
+b.onclick=function(){v.play();b.style.display='none';};
+</script>
+</body></html>
